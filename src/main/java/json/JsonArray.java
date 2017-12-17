@@ -14,10 +14,6 @@ public class JsonArray extends Json {
         this.jsons = Arrays.asList(jsons);
     }
 
-    public JsonArray(List<Json> jsons) {
-        this.jsons = jsons;
-    }
-
     @Override
     public String toJson() {
         return "[" + getJsonArrBody() + "]";

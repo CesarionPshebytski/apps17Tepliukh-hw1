@@ -23,9 +23,9 @@ public class Student extends BasicStudent {
         JsonPair surname = new JsonPair("surname", new JsonString(this.surname));
         JsonPair year = new JsonPair("year", new JsonNumber(this.year));
 
-        List<Json> examsList = new LinkedList<>();
-        for (Tuple<String, Integer> exam : exams) {
-            examsList.add(new Exam(exam));
+        JsonObject[] examsList = new JsonObject[this.exams.length];
+        for (int i = 0; i < exams.length; i++) {
+            examsList[i] = new JsonObject(new JsonPair(exams[i].key, new JsonNumber(exams[i].value)));
         }
 
         JsonPair exams = new JsonPair("exams", new JsonArray(examsList));
