@@ -2,8 +2,6 @@ package domain;
 
 import json.*;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -31,7 +29,7 @@ public class Student extends BasicStudent {
         JsonPair year = new JsonPair("year", new JsonNumber(this.year));
 
         List<Json> examsList = new LinkedList<>();
-        for (Tuple<String, Integer> exam: exams){
+        for (Tuple<String, Integer> exam : exams) {
             examsList.add(new Exam(exam));
         }
 

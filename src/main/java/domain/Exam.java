@@ -7,10 +7,10 @@ public class Exam extends Json {
     protected Integer mark;
     protected Boolean passed;
 
-    public Exam(Tuple<String, Integer> exam){
+    public Exam(Tuple<String, Integer> exam) {
         this.course = exam.key;
         this.mark = exam.value;
-        this.passed = mark>2;
+        this.passed = mark > 2;
     }
 
     @Override

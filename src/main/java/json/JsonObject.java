@@ -12,7 +12,7 @@ public class JsonObject extends Json {
 
     public JsonObject(JsonPair... jsonPairs) {
         this.jsonPairs = new LinkedList<>();
-        for (JsonPair jsonPair: jsonPairs){
+        for (JsonPair jsonPair : jsonPairs) {
             for (JsonPair pair : this.jsonPairs) {
                 if (pair.key.equals(jsonPair.key)) {
                     int index = this.jsonPairs.indexOf(pair);
@@ -27,16 +27,16 @@ public class JsonObject extends Json {
 
     @Override
     public String toJson() {
-        return "{\n"+getJsonObjectBody()+"\n}";
+        return "{\n" + getJsonObjectBody() + "\n}";
     }
 
-    private String getJsonObjectBody(){
+    private String getJsonObjectBody() {
         String jsonObjStr = "";
         Iterator<JsonPair> jsonPairIterator = jsonPairs.iterator();
         while (jsonPairIterator.hasNext()) {
             JsonPair pair = jsonPairIterator.next();
-            jsonObjStr += " '"+pair.key + "': " + pair.value.toJson();
-            if (jsonPairIterator.hasNext()){
+            jsonObjStr += " '" + pair.key + "': " + pair.value.toJson();
+            if (jsonPairIterator.hasNext()) {
                 jsonObjStr += ",\n";
             }
         }
@@ -45,7 +45,7 @@ public class JsonObject extends Json {
 
     public void add(JsonPair jsonPair) {
         for (JsonPair pair : jsonPairs) {
-            if (pair.key.equals(jsonPair.key)){
+            if (pair.key.equals(jsonPair.key)) {
                 int index = jsonPairs.indexOf(pair);
                 jsonPairs.set(index, jsonPair);
                 return;
@@ -55,8 +55,8 @@ public class JsonObject extends Json {
     }
 
     public Json find(String name) {
-        for (JsonPair jsonPair: jsonPairs) {
-            if (jsonPair.key.equals(name)){
+        for (JsonPair jsonPair : jsonPairs) {
+            if (jsonPair.key.equals(name)) {
                 return jsonPair.value;
             }
         }
@@ -69,7 +69,7 @@ public class JsonObject extends Json {
             Iterator<JsonPair> jsonPairIterator = jsonPairs.iterator();
             while (jsonPairIterator.hasNext()) {
                 JsonPair pair = jsonPairIterator.next();
-                if (pair.key.equals(name)){
+                if (pair.key.equals(name)) {
                     jsonObject.add(pair);
                 }
             }
