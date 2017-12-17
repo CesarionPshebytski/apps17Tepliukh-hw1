@@ -10,15 +10,10 @@ import java.util.List;
  */
 public class Student extends BasicStudent {
 
-    protected final String name;
-    protected final String surname;
-    protected final Integer year;
     protected final Tuple<String, Integer>[] exams;
 
     public Student(String name, String surname, Integer year, Tuple<String, Integer>... exams) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
+        super(name, surname, year);
         this.exams = exams;
     }
 
