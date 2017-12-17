@@ -1,6 +1,4 @@
-import domain.BasicStudent;
 import domain.Exam;
-import domain.Student;
 import json.*;
 
 /**
