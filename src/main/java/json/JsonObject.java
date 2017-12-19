@@ -66,9 +66,7 @@ public class JsonObject extends Json {
     public JsonObject projection(String... names) {
         JsonObject jsonObject = new JsonObject();
         for (String name : names) {
-            Iterator<JsonPair> jsonPairIterator = jsonPairs.iterator();
-            while (jsonPairIterator.hasNext()) {
-                JsonPair pair = jsonPairIterator.next();
+            for (JsonPair pair : jsonPairs) {
                 if (pair.key.equals(name)) {
                     jsonObject.add(pair);
                 }
